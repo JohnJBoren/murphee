@@ -46,6 +46,9 @@ const config = {
         backgroundColor: ["responsive", "hover", "focus", "disabled"],
     },
     plugins: [],
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
 }
 
 module.exports = config

@@ -1,15 +1,15 @@
 import {writable, get} from "svelte/store"
 
-let id
+let id: number
 let wakeLock = undefined
 let previouslyElapsed = 0
 
 const elapsed = writable(0)
 const running = writable(false)
 const counting = writable(false)
-const laps = writable([{startTime: 0, endTime: null, time: null}])
+const laps = writable([{startTime: 0, endTime: null, time: null}] as Lap[])
 
-const start = () => {
+const start = (): void => {
     if (get(elapsed)) {
         startTimer()
     } else {
@@ -17,15 +17,16 @@ const start = () => {
     }
 }
 
-const startCountdown = () => {
+const startCountdown = (): void => {
     counting.set(true)
 }
 
-const startTimer = async () => {
+const startTimer = async (): Promise<any> => {
     running.set(true)
     const startTime = Date.now()
 
     if ("wakeLock" in navigator) {
+        // @ts-expect-error navigator has no type
         wakeLock = await navigator.wakeLock.request("screen")
     }
 
@@ -34,7 +35,7 @@ const startTimer = async () => {
     }, 10)
 }
 
-const lap = () => {
+const lap = (): void => {
     const newLaps = get(laps)
     const elapsedTime = get(elapsed)
     const index = newLaps.length - 1
@@ -51,7 +52,7 @@ const lap = () => {
     laps.set(newLaps)
 }
 
-const stop = async () => {
+const stop = async (): Promise<any> => {
     running.set(false)
     previouslyElapsed = get(elapsed)
 
@@ -60,7 +61,7 @@ const stop = async () => {
     wakeLock = await wakeLock.release()
 }
 
-const resetTimer = () => {
+const resetTimer = (): void => {
     elapsed.set(0)
     running.set(false)
     laps.set([{startTime: 0, endTime: null, time: null}])

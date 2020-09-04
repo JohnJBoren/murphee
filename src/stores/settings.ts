@@ -1,8 +1,8 @@
 import {writable, get} from "svelte/store"
 
-const load = name => {
+const load = (name: string) => {
     const item = localStorage.getItem(name)
-    let value
+    let value: number | boolean
 
     switch (name) {
         case "runs":
@@ -17,7 +17,7 @@ const load = name => {
     return value
 }
 
-const save = () => {
+const save = (): void => {
     localStorage.setItem("runs", get(runs))
     localStorage.setItem("rounds", get(rounds))
 }

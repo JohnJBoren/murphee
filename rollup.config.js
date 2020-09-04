@@ -29,7 +29,7 @@ const config = {
                 : "https://murphee.netlify.app",
         }),
         commonjs(),
-        typescript({sourceMap: process.env.ROLLUP_WATCH}),
+        typescript({sourceMap: !!process.env.ROLLUP_WATCH}),
         copy({targets: [{src: "static/*", dest: path}]}),
         !process.env.ROLLUP_WATCH && terser(),
         process.env.ROLLUP_WATCH &&

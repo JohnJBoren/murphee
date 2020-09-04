@@ -2,7 +2,6 @@
     import {fade} from "svelte/transition"
     import {navigate} from "svelte-routing"
 
-
     import Timer from "../components/Timer.svelte"
     import LetsGo from "../components/LetsGo.svelte"
     import NextButton from "../components/NextButton.svelte"
@@ -44,7 +43,7 @@
             stop()
             completed.set(true)
 
-            if(isPro($user)) {
+            if (isPro($user)) {
                 // save
                 saving.set(true)
 
@@ -82,7 +81,7 @@
 </script>
 
 <main
-    class="h-full grid grid-rows-timer row-gap-4 items-center"
+    class="h-full grid grid-rows-timer gap-y-4 items-center"
     in:fade={{duration: 500}}>
     {#if !$elapsed && !$counting}
         <LetsGo />
