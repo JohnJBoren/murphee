@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {workout, completed} from "../stores/workout.js"
 
     $: {

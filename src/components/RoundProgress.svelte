@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     export let exercise
 
     const exercises = ["pull ups", "push ups", "squats"]

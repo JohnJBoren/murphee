@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {Route} from "svelte-routing"
 
     import Redirect from "./Redirect.svelte"

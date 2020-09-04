@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {fade} from "svelte/transition"
     import {navigate} from "svelte-routing"
     import {loadStripe} from "@stripe/stripe-js"

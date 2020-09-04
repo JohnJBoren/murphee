@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Time from "./Time.svelte"
     import RoundProgress from "./RoundProgress.svelte"
     import WorkoutProgress from "./WorkoutProgress.svelte"

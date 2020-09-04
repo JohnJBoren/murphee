@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {completed} from "../stores/workout.js"
 
     export let onStart

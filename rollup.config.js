@@ -4,8 +4,10 @@ import svelte from "rollup-plugin-svelte"
 import replace from "rollup-plugin-replace"
 import {terser} from "rollup-plugin-terser"
 import commonjs from "@rollup/plugin-commonjs"
+import autoPreprocess from "svelte-preprocess"
 import resolve from "@rollup/plugin-node-resolve"
 import livereload from "rollup-plugin-livereload"
+import typescript from "@rollup/plugin-typescript"
 
 const path = "dist"
 
@@ -16,7 +18,10 @@ const config = {
         sourcemap: process.env.ROLLUP_WATCH,
     },
     plugins: [
-        svelte({dev: process.env.ROLLUP_WATCH}),
+        svelte({
+            dev: process.env.ROLLUP_WATCH,
+            preprocess: autoPreprocess(),
+        }),
         resolve({browser: true}),
         replace({
             BASE_URL: process.env.ROLLUP_WATCH
@@ -24,6 +29,7 @@ const config = {
                 : "https://murphee.netlify.app",
         }),
         commonjs(),
+        typescript({sourceMap: process.env.ROLLUP_WATCH}),
         copy({targets: [{src: "static/*", dest: path}]}),
         !process.env.ROLLUP_WATCH && terser(),
         process.env.ROLLUP_WATCH &&

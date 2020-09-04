@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {format} from "date-fns"
     import {writable} from "svelte/store"
     import {cubicOut} from "svelte/easing"

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Time from "./Time.svelte"
     import {exercises} from "../stores/exercises.js"
 
