@@ -16,15 +16,14 @@
     }
 </script>
 
-
 {#if !$elapsed}
     <section>
-        <Countdown {onCompleted}/>
+        <Countdown {onCompleted} />
     </section>
 {:else}
     <section
         class="grid grid-rows-stats h-full items-center text-center text-5xl
-        text-black uppercase tracking-tighter">
+            text-black uppercase tracking-tighter">
         <WorkoutProgress />
 
         <div>
