@@ -13,3 +13,9 @@ interface Lap {
     endTime: number | null
     time: number | null
 }
+
+interface Workout {
+    id?: string
+    date: number
+    exercises: Exercise[]
+}

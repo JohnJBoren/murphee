@@ -21,7 +21,7 @@ const startCountdown = (): void => {
     counting.set(true)
 }
 
-const startTimer = async (): Promise<any> => {
+const startTimer = async (): Promise<void> => {
     running.set(true)
     const startTime = Date.now()
 
@@ -52,7 +52,7 @@ const lap = (): void => {
     laps.set(newLaps)
 }
 
-const stop = async (): Promise<any> => {
+const stop = async (): Promise<void> => {
     running.set(false)
     previouslyElapsed = get(elapsed)
 
