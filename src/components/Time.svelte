@@ -21,5 +21,5 @@
 </style>
 
 <time class="font-body tracking-widest text-6xl {blink && 'blink'} {className}">
-    {format(time, "mm:ss:SS")}
+    {format(time, 'mm:ss:SS')}
 </time>
