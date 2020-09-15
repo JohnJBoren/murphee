@@ -19,11 +19,11 @@
 
 <div
     data-testid="round"
-    class={`grid grid-cols-2 text-xl uppercase font-body ${round.number ? 'cursor-pointer' : 'cursor-default'}`}
+    class={`grid grid-cols-2 text-xl uppercase font-body ${round.number ? "cursor-pointer" : "cursor-default"}`}
     on:click={onClick}>
     <div class="flex items-center">
         <svg
-            class={`w-6 h-6 transition-transform ease-out duration-500 transform ${$expanded && 'rotate-90'} ${!round.number && 'invisible'}`}
+            class={`w-6 h-6 transition-transform ease-out duration-500 transform ${$expanded && "rotate-90"} ${!round.number && "invisible"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@
     </div>
 
     <span class="tracking-widest text-right">
-        {format(round.time, 'mm:ss:SS')}
+        {format(round.time, "mm:ss:SS")}
     </span>
 
     {#if $expanded}
@@ -52,7 +52,7 @@
                 </span>
 
                 <span class="tracking-widest text-right">
-                    {format(exercise.time, 'mm:ss:SS')}
+                    {format(exercise.time, "mm:ss:SS")}
                 </span>
             {/each}
         </div>
